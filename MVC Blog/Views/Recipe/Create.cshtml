@@ -1,0 +1,91 @@
+﻿@model MVC_Blog.Models.ItemModels.Recipe
+@{
+    ViewBag.Title = "NewRecipe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- New Recipe Section Begin -->
+<section class="new-recipe spad">
+    <div class="container">
+        @using (Html.BeginForm("Create", "Recipe", FormMethod.Post, new { @class = "row", enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary()
+            @Html.AntiForgeryToken();
+
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="ingredients-item">
+                        <div class="intro-item">
+                            <div class="image-upload">
+                                <label for="file-input">
+                                    <img id="upload-file-img" src="@Url.Content("~/Content/img/no-image-large.png")" />
+                                </label>
+
+                                <input id="file-input" name="image" type="file" />
+                                <a id="upload-file-text">Image</a>
+                            </div>
+                            <h2>Recipe Name</h2>
+                            @Html.TextBoxFor(m => m.RecipeName, new { @class = "recipe-name" })
+                            <h2>Url</h2>
+                            @Html.TextBoxFor(m => m.SeoUrl, new { @class = "recipe-url" })
+                            <h2>Tags</h2>
+                            @Html.DropDownList("tags", ViewBag.Tags as SelectList, new { multiple = "multiple", @class = "dropdown" })
+                            <div class="recipe-time">
+                                <ul>
+                                    <li>Prep time: <span>@Html.TextBoxFor(m => m.PrepTime) min</span></li>
+                                    <li>Cook time: <span>@Html.TextBoxFor(m => m.CookTime) min</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ingredient-list">
+                            @{
+                                string ingredients = @"gfd";
+                            }
+                            <h5>Ingredients</h5>
+                            @Html.TextAreaFor(m => m.IngredientsContent, new { @id = "editor1" })
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="recipe-right">
+                        <div class="recipe-desc">
+                            <h3>Description</h3>
+                            @Html.TextAreaFor(m => m.Description, new { @id = "editor2" })
+                        </div>
+                        <div class="instruction-list">
+                            <h3>Instructions</h3>
+                            @Html.TextAreaFor(m => m.MainContent, new { @id = "editor3" })
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <button class="submit-btn" type="submit">Share</button>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<script src="@Url.Content("~/Content/ckeditor/ckeditor.js")"></script>
+<script>
+    ClassicEditor.create(document.querySelector('#editor1'), {
+        heading: {
+            options: [
+                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                { model: 'heading6', view: 'h6', title: 'Title', class: 'ck-heading_heading6' }
+            ]
+        }
+    });
+    ClassicEditor.create(document.querySelector('#editor2'));
+    ClassicEditor.create(document.querySelector('#editor3'), {
+        heading: {
+            options: [
+                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                { model: 'span', view: 'span', title: 'Span', class: 'ck-heading_heading6' }
+            ]
+        }
+    });
+</script>
+<!-- New Recipe Section End -->

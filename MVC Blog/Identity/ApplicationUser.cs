@@ -8,5 +8,7 @@ namespace MVC_Blog.Identity
 {
     public class ApplicationUser : IdentityUser
     {
+        public string FullName { get; set; }
+        public string Description { get; set; }
     }
 }

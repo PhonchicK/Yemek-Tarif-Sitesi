@@ -1,0 +1,63 @@
+﻿@model MVC_Blog.Models.ViewModels.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="login-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                @using (Html.BeginForm("Register", "User", FormMethod.Post, new { @class = "login-form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h2>Register</h2>
+                    <div class="row">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="col-lg-6">
+                            @Html.EditorFor(model => model.FullName,
+                                new { htmlAttributes = new { placeholder = Html.DisplayNameFor(model => model.FullName) } })
+                            @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-lg-6">
+                            @Html.EditorFor(model => model.Username,
+                                new { htmlAttributes = new { placeholder = Html.DisplayNameFor(model => model.Username) } })
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-lg-12">
+                            @Html.EditorFor(model => model.Email,
+                                new { htmlAttributes = new { placeholder = Html.DisplayNameFor(model => model.Email) } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-lg-12">
+                            @Html.EditorFor(model => model.Description,
+                                new { htmlAttributes = new { placeholder = Html.DisplayNameFor(model => model.Description) } })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-lg-12">
+                            <h4>Password</h4>
+                        </div>
+
+                        <div class="col-lg-6">
+                            @Html.EditorFor(model => model.Password,
+                                new { htmlAttributes = new { placeholder = Html.DisplayNameFor(model => model.Password) } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-lg-6">
+                            @Html.EditorFor(model => model.RePassword,
+                                new { htmlAttributes = new { placeholder = Html.DisplayNameFor(model => model.RePassword) } })
+                            @Html.ValidationMessageFor(model => model.RePassword, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <button type="submit">Register</button>
+                }
+            </div>
+        </div>
+    </div>
+</section>

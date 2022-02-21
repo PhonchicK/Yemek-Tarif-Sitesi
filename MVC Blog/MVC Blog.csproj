@@ -59,8 +59,11 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    <Reference Include="Microsoft.Owin, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
@@ -121,23 +124,173 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ckeditor\ckeditor.js" />
+    <Content Include="Content\ckeditor\translations\af.js" />
+    <Content Include="Content\ckeditor\translations\ar.js" />
+    <Content Include="Content\ckeditor\translations\ast.js" />
+    <Content Include="Content\ckeditor\translations\az.js" />
+    <Content Include="Content\ckeditor\translations\bg.js" />
+    <Content Include="Content\ckeditor\translations\bs.js" />
+    <Content Include="Content\ckeditor\translations\ca.js" />
+    <Content Include="Content\ckeditor\translations\cs.js" />
+    <Content Include="Content\ckeditor\translations\da.js" />
+    <Content Include="Content\ckeditor\translations\de-ch.js" />
+    <Content Include="Content\ckeditor\translations\de.js" />
+    <Content Include="Content\ckeditor\translations\el.js" />
+    <Content Include="Content\ckeditor\translations\en-au.js" />
+    <Content Include="Content\ckeditor\translations\en-gb.js" />
+    <Content Include="Content\ckeditor\translations\eo.js" />
+    <Content Include="Content\ckeditor\translations\es.js" />
+    <Content Include="Content\ckeditor\translations\et.js" />
+    <Content Include="Content\ckeditor\translations\eu.js" />
+    <Content Include="Content\ckeditor\translations\fa.js" />
+    <Content Include="Content\ckeditor\translations\fi.js" />
+    <Content Include="Content\ckeditor\translations\fr.js" />
+    <Content Include="Content\ckeditor\translations\gl.js" />
+    <Content Include="Content\ckeditor\translations\gu.js" />
+    <Content Include="Content\ckeditor\translations\he.js" />
+    <Content Include="Content\ckeditor\translations\hi.js" />
+    <Content Include="Content\ckeditor\translations\hr.js" />
+    <Content Include="Content\ckeditor\translations\hu.js" />
+    <Content Include="Content\ckeditor\translations\id.js" />
+    <Content Include="Content\ckeditor\translations\it.js" />
+    <Content Include="Content\ckeditor\translations\ja.js" />
+    <Content Include="Content\ckeditor\translations\km.js" />
+    <Content Include="Content\ckeditor\translations\kn.js" />
+    <Content Include="Content\ckeditor\translations\ko.js" />
+    <Content Include="Content\ckeditor\translations\ku.js" />
+    <Content Include="Content\ckeditor\translations\lt.js" />
+    <Content Include="Content\ckeditor\translations\lv.js" />
+    <Content Include="Content\ckeditor\translations\ms.js" />
+    <Content Include="Content\ckeditor\translations\nb.js" />
+    <Content Include="Content\ckeditor\translations\ne.js" />
+    <Content Include="Content\ckeditor\translations\nl.js" />
+    <Content Include="Content\ckeditor\translations\no.js" />
+    <Content Include="Content\ckeditor\translations\oc.js" />
+    <Content Include="Content\ckeditor\translations\pl.js" />
+    <Content Include="Content\ckeditor\translations\pt-br.js" />
+    <Content Include="Content\ckeditor\translations\pt.js" />
+    <Content Include="Content\ckeditor\translations\ro.js" />
+    <Content Include="Content\ckeditor\translations\ru.js" />
+    <Content Include="Content\ckeditor\translations\si.js" />
+    <Content Include="Content\ckeditor\translations\sk.js" />
+    <Content Include="Content\ckeditor\translations\sl.js" />
+    <Content Include="Content\ckeditor\translations\sq.js" />
+    <Content Include="Content\ckeditor\translations\sr-latn.js" />
+    <Content Include="Content\ckeditor\translations\sr.js" />
+    <Content Include="Content\ckeditor\translations\sv.js" />
+    <Content Include="Content\ckeditor\translations\th.js" />
+    <Content Include="Content\ckeditor\translations\tk.js" />
+    <Content Include="Content\ckeditor\translations\tr.js" />
+    <Content Include="Content\ckeditor\translations\tt.js" />
+    <Content Include="Content\ckeditor\translations\ug.js" />
+    <Content Include="Content\ckeditor\translations\uk.js" />
+    <Content Include="Content\ckeditor\translations\uz.js" />
+    <Content Include="Content\ckeditor\translations\vi.js" />
+    <Content Include="Content\ckeditor\translations\zh-cn.js" />
+    <Content Include="Content\ckeditor\translations\zh.js" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\chosen-sprite.png" />
+    <Content Include="Content\css\chosen.min.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\nice-select.css" />
+    <Content Include="Content\css\slicknav.min.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\img\about-me.jpg" />
+    <Content Include="Content\img\about-right.jpg" />
+    <Content Include="Content\img\blog-comment.png" />
+    <Content Include="Content\img\blog-img.jpg" />
+    <Content Include="Content\img\cat-feature\big-1.jpg" />
+    <Content Include="Content\img\cat-feature\big-2.jpg" />
+    <Content Include="Content\img\cat-feature\big-3.jpg" />
+    <Content Include="Content\img\cat-feature\big-4.jpg" />
+    <Content Include="Content\img\cat-feature\small-1.jpg" />
+    <Content Include="Content\img\cat-feature\small-2.jpg" />
+    <Content Include="Content\img\cat-feature\small-3.jpg" />
+    <Content Include="Content\img\cat-feature\small-4.jpg" />
+    <Content Include="Content\img\cat-feature\small-5.jpg" />
+    <Content Include="Content\img\cat-feature\small-6.jpg" />
+    <Content Include="Content\img\cat-feature\small-7.jpg" />
+    <Content Include="Content\img\cate-filter\cate-filter-1.jpg" />
+    <Content Include="Content\img\cate-filter\cate-filter-2.jpg" />
+    <Content Include="Content\img\cate-filter\cate-filter-3.jpg" />
+    <Content Include="Content\img\cate-filter\cate-filter-4.jpg" />
+    <Content Include="Content\img\cate-filter\cate-filter-5.jpg" />
+    <Content Include="Content\img\feature-1.jpg" />
+    <Content Include="Content\img\feature-2.jpg" />
+    <Content Include="Content\img\footer-logo.png" />
+    <Content Include="Content\img\intro-img.jpg" />
+    <Content Include="Content\img\little-logo.png" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\map-bg.png" />
+    <Content Include="Content\img\recipe-1.jpg" />
+    <Content Include="Content\img\recipe-2.jpg" />
+    <Content Include="Content\img\recipe-3.jpg" />
+    <Content Include="Content\img\recipe-4.jpg" />
+    <Content Include="Content\img\recipe-5.jpg" />
+    <Content Include="Content\img\recipe-single.jpg" />
+    <Content Include="Content\img\recipe\recipe-1.jpg" />
+    <Content Include="Content\img\recipe\recipe-2.jpg" />
+    <Content Include="Content\img\recipe\recipe-3.jpg" />
+    <Content Include="Content\img\recipe\recipe-4.jpg" />
+    <Content Include="Content\img\recipe\recipe-5.jpg" />
+    <Content Include="Content\img\recipe\recipe-6.jpg" />
+    <Content Include="Content\img\recipe\recipe-7.jpg" />
+    <Content Include="Content\img\recipe\recipe-8.jpg" />
+    <Content Include="Content\img\recipe\recipe-9.jpg" />
+    <Content Include="Content\img\search-bg.jpg" />
+    <Content Include="Content\img\top-recipe\recipe-1.jpg" />
+    <Content Include="Content\img\top-recipe\recipe-2.jpg" />
+    <Content Include="Content\img\top-recipe\recipe-3.jpg" />
+    <Content Include="Content\img\top-recipe\recipe-4.jpg" />
+    <Content Include="Content\img\top-recipe\recipe-5.jpg" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\chosen.jquery.min.js" />
+    <Content Include="Content\js\jquery-3.3.1.min.js" />
+    <Content Include="Content\js\jquery.nice-select.min.js" />
+    <Content Include="Content\js\jquery.slicknav.js" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\mixitup.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RecipeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Identity\ApplicationIdentityContext.cs" />
-    <Compile Include="Identity\ApplicationRole.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
+    <Compile Include="Models\ItemModels\Recipe.cs" />
+    <Compile Include="Models\ItemModels\RecipeTag.cs" />
+    <Compile Include="Models\ItemModels\Tag.cs" />
+    <Compile Include="Models\ViewModels\LoginViewModel.cs" />
+    <Compile Include="Models\ViewModels\RegisterViewModel.cs" />
+    <Compile Include="Models\YemekBlogContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\ckeditor\ckeditor.js.map" />
     <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\Recipe\Index.cshtml" />
+    <Content Include="Views\Recipe\Create.cshtml" />
+    <Content Include="Views\Recipe\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -147,8 +300,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
