@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MVC_Blog.Models.ItemModels.Tag>
+<!-- Hero Search Section Begin -->
+<div class="hero-search set-bg" data-setbg="@Url.Content("~/Content/img/search-bg.jpg")">
+    <div class="container">
+        <div class="filter-table">
+            <form action="#" class="filter-search">
+                <input type="text" placeholder="Search recipe">
+                <select id="tag">
+                    @foreach (var item in Model)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Hero Search Section End -->

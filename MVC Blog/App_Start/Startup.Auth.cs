@@ -15,8 +15,8 @@ namespace MVC_Blog.App_Start
             app.UseCookieAuthentication(new CookieAuthenticationOptions() 
             {
                 AuthenticationType = "ApplicationAuth",
-                LoginPath = new PathString("/Account/Login"),
-                LogoutPath = new PathString("/Account/Logout"),
+                LoginPath = new PathString("/User/Login"),
+                LogoutPath = new PathString("/User/Logout"),
                 ExpireTimeSpan = TimeSpan.FromHours(2.0)
             });
         }

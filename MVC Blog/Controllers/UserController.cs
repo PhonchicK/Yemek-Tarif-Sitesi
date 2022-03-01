@@ -12,6 +12,9 @@ using Microsoft.Owin.Security;
 
 namespace MVC_Blog.Controllers
 {
+    /*To Do
+    Login ve Register Formları tek sayfada olacak  
+    */
     public class UserController : Controller
     {
         private UserManager<ApplicationUser> userManager;

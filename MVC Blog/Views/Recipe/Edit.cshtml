@@ -1,12 +1,12 @@
 ﻿@model MVC_Blog.Models.ViewModels.RecipeViewModel
 @{
-    ViewBag.Title = "New Recipe";
+    ViewBag.Title = "Edit Recipe";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <!-- New Recipe Section Begin -->
 <section class="new-recipe spad">
     <div class="container">
-        @using (Html.BeginForm("Create", "Recipe", FormMethod.Post, new { @class = "row", enctype = "multipart/form-data" }))
+        @using (Html.BeginForm("Edit", "Recipe", FormMethod.Post,new { @class = "row", enctype = "multipart/form-data", seoUrl = Model.Recipe.SeoUrl }))
         {
             @Html.ValidationSummary()
             @Html.AntiForgeryToken();
@@ -17,9 +17,8 @@
                         <div class="intro-item">
                             <div class="image-upload">
                                 <label for="file-input">
-                                    <img id="upload-file-img" src="@Url.Content("~/Content/img/no-image-large.png")" />
+                                    <img id="upload-file-img" src="@Url.Content("~/Content/img/recipe/" + Model.Recipe.Image)" />
                                 </label>
-
                                 <input id="file-input" name="Image" type="file" />
                                 <a id="upload-file-text">Image</a>
                             </div>

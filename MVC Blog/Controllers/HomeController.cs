@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using System.Web.ModelBinding;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
+using Microsoft.AspNet.Identity.EntityFramework;
+using MVC_Blog.Identity;
 
 namespace MVC_Blog.Controllers
 {

@@ -47,12 +47,12 @@
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </li>
-                        <li><a href="recipe.html">Recipes</a></li>
+                        <li><a href="@Url.Action("Index", "Recipe")">Recipes</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         @if (!User.Identity.IsAuthenticated)
                         {
                             <li>
-                                <a href="#">Account</a>
+                                <a>Account</a>
                                 <ul class="sub-menu">
                                     <li><a href="@Url.Action("Login", "User")">Login</a></li>
                                     <li><a href="@Url.Action("Register", "User")">Register</a></li>
@@ -62,7 +62,7 @@
                         else
                         {
                             <li>
-                                <a href="#">@User.Identity.Name.Substring(0, Math.Min(User.Identity.Name.Length, 10))</a>
+                                <a>@User.Identity.Name.Substring(0, Math.Min(User.Identity.Name.Length, 10))</a>
                                 <ul class="sub-menu">
                                     <li><a href="about-me.html">Profile</a></li>
                                     <li><a href="@Url.Action("Logout", "User")">Logout</a></li>
@@ -79,24 +79,7 @@
         </div>
     </header>
     <!-- Header End -->
-    <!-- Hero Search Section Begin -->
-    <div class="hero-search set-bg" data-setbg="@Url.Content("~/Content/img/search-bg.jpg")">
-        <div class="container">
-            <div class="filter-table">
-                <form action="#" class="filter-search">
-                    <input type="text" placeholder="Search recipe">
-                    <select id="category">
-                        <option value="">Category</option>
-                    </select>
-                    <select id="tag">
-                        <option value="">Tags</option>
-                    </select>
-                    <button type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Hero Search Section End -->
+    @{ Html.RenderAction("SearchMenu", "Recipe"); }
     @RenderBody()
     <!-- Footer Section Begin -->
     <footer class="footer-section">
