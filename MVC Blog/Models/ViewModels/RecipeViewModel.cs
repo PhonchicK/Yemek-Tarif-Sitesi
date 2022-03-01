@@ -17,9 +17,12 @@ namespace MVC_Blog.Models.ViewModels
         public RecipeViewModel(Recipe recipe)
         {
             this.Recipe = recipe;
-            this.SelectedIds = recipe.Tags.Select(t => t.Id).ToArray();
+            this.TagIds = recipe.Tags.Select(t => t.Id).ToArray();
         }
-        public int[] SelectedIds { get; set; }
+
+        [TagsValidate]
+        public int[] TagIds { get; set; }
+
         public Recipe Recipe { get; set; }
 
         [FileValidate("png,jpg,jpeg", 5000000)]

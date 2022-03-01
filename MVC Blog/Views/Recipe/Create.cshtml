@@ -28,7 +28,7 @@
                             <h2>Url</h2>
                             @Html.TextBoxFor(m => m.Recipe.SeoUrl, new { @class = "recipe-url" })
                             <h2>Tags</h2>
-                            @Html.ListBoxFor(m => m.SelectedIds, ViewBag.Tags as SelectList, new { multiple = "multiple", @class = "dropdown" })
+                            @Html.ListBoxFor(m => m.TagIds, ViewBag.Tags as SelectList, new { multiple = "multiple", @class = "dropdown" })
                             <div class="recipe-time">
                                 <ul>
                                     <li>Prep time: <span>@Html.TextBoxFor(m => m.Recipe.PrepTime) min</span></li>

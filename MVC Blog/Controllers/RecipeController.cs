@@ -55,7 +55,7 @@ namespace MVC_Blog.Controllers
                 model.Recipe = context.Recipes.Add(model.Recipe);
                 context.SaveChanges();
 
-                foreach (int item in model.SelectedIds)
+                foreach (int item in model.TagIds)
                 {
                     model.Recipe.Tags.Add(context.Tags.First(t => t.Id == item));
                     context.SaveChanges();
@@ -102,13 +102,13 @@ namespace MVC_Blog.Controllers
             {
                 updatingRecipe.Tags.ToList().ForEach(t =>
                 {
-                    if (!model.SelectedIds.Contains(t.Id))
+                    if (!model.TagIds.Contains(t.Id))
                     {
                         updatingRecipe.Tags.Remove(t);
                         context.SaveChanges();
                     }
                 });
-                model.SelectedIds.ToList().ForEach(t =>
+                model.TagIds.ToList().ForEach(t =>
                 {
                     if (!updatingRecipe.Tags.Select(tr => tr.Id).Contains(t))
                     {
